@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.frotas.web.domain.Categoria;
-import com.frotas.web.repository.CategoriaDao;
+import com.frotas.web.service.CategoriaService;
 
 @Controller
 @RequestMapping("/veiculo")
 public class CategoriaController {
 	
 	@Autowired
-	private CategoriaDao service;
+	private CategoriaService service;
+	
 	
 	@GetMapping ("/cadastrar")
 	public String cadastrar(Categoria categoria) {
@@ -26,7 +27,7 @@ public class CategoriaController {
 	
 	@GetMapping ("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("categorias",service.findAll());
+		model.addAttribute("categorias",service.fingdAll());
 		return "veiculo/lista_categoria";
 	}
 	

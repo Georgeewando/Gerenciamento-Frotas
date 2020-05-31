@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 public class Combustivel extends AbstractEntity<Long>{
+	
 	@Column(name = "tipo_combustivel", nullable = false,
 			unique = true, length = 60)
 			private String tipoCombustivel;
